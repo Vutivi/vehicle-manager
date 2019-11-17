@@ -1,0 +1,103 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+table th, table td { white-space: nowrap; }
+
+.card {
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+  white-space: nowrap;
+}
+.cardimg {
+}
+
+.cardcontent {
+  height: 39%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+
+}
+
+.price {
+  color: #007bff !important;
+}
+
+.cardcontent {
+  font-size: 0.8em;
+}
+.cardfooter {
+  height: 12%;
+  background: rgb(235, 235, 235);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cardbutton {
+  background: lightgreen;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transform: translate(150px, 128px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s ease-in;
+}
+.cardbutton i {
+  color: white;
+  transform: translateY(-2px);
+}
+
+.cardbutton:hover {
+  background: cyan;
+}
+.cardfooter h3 {
+  font-size: 0.8em;
+}
+.cardreadme {
+  color: rgb(150, 150, 150);
+}
+.cardcontent p:nth-child(1) {
+  font-size: 0.8em;
+}
+.cardcontent h3 {
+  font-size: 1.4em;
+}
+.cardcontent p:nth-child(2) {
+  font-size: 0.9em;
+}
+
+
+

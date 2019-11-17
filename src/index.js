@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(async (req, res, next) => {
   req.context = {
     models,
-    me: await models.User.findByLogin('vutivi'),
+    // me: await models.User.findByLogin('vutivi'),
   };
   next();
 });
