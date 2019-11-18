@@ -1,8 +1,10 @@
 import { Router } from 'express';
 const router = Router();
 
-router.get('/', async (req, res) => {
-  const vehicles = await req.context.models.Vehicle.findAll();
+router.get('/user/:userId', async (req, res) => {
+  const vehicles = await req.context.models.Vehicle.findAll({where: { 
+      userId: req.params.userId
+  }});
   return res.send(vehicles);
 });
 
@@ -23,7 +25,7 @@ router.post('/', async (req, res) => {
     mileage: req.body.mileage,
     userId: req.body.userId,
   })
-  .then(() => res.json('Vehicle created!'))
+  .then(() => res.json("Wow"))
   .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -47,7 +49,7 @@ router.put('/:vehicleId', async (req, res) => {
     vehicle.userId = req.body.userId
 
     vehicle.save()
-      .then(() => res.json('Vehicle updated!'))
+      .then(() => res.json(vehicle))
       .catch(err => res.status(400).json('Error: ' + err));
   })
   .catch(err => res.status(400).json('Error: ' + err));

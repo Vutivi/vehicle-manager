@@ -32,8 +32,6 @@ table th, table td { white-space: nowrap; }
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
   white-space: nowrap;
 }
-.cardimg {
-}
 
 .cardcontent {
   height: 39%;
