@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
-import { FormGroup, Label, Input } from 'reactstrap';
+import { FormGroup, Label } from 'reactstrap';
 import { Container, Row } from 'reactstrap'
 import ModalForm from '../Modals/Modal';
 
 class Card extends Component {
   state = {
-    currency: 'ZAR'
+    currency: 'ZAR',
+    currentRate: 1
   }
 
 
@@ -31,22 +32,22 @@ class Card extends Component {
   }
 
   handleCurrency= e =>{
-    this.setState({[e.target.name]: e.target.value})
-    alert(this.state.currency)
-    // fetch('/vehicles/user/' +  JSON.parse(localStorage.getItem('user')).id)
-    //   .then(response => response.json())
-    //   .then(items => this.setState({items}))
-    //   .catch(err => console.log(err))
+    this.setState({currency: e.target.value})
+    fetch('https://api.exchangeratesapi.io/latest?base=ZAR')
+      .then(response => response.json())
+      .then(items => items.rates[this.state.currency])
+      .then(value => this.setState({currentRate: value}))
+      .catch(err => console.log(err))
   }
 
   render() {
 
     const items = this.props.items.map((item, key) => {
       return (
-            <div key={'col-'+ key} className="col-md-4 col-sm-12" key={item.id} style={{marginBottom: "30px"}}>
+            <div key={'col-'+ key} className="col-md-4 col-sm-12" style={{marginBottom: "30px"}}>
                 <img className="cardimg" src="https://googleplus-covers.com/covers/nature_balloon_ride.jpg" width="100%" height="50%" alt={item.make} />
                 <div className="cardcontent">
-                    <h3 className="price" style={{color: "#007bff"}}>R{item.price}</h3>
+                    <h3 className="price" style={{color: "#007bff"}}>{this.state.currency} {item.price * this.state.currentRate}</h3>
                     <p>{item.make} - {item.model}</p>
                     <p>Year: {item.year}</p>
                     <p>Mileage: {item.mileage} KM</p>
@@ -68,7 +69,8 @@ class Card extends Component {
                     <select className="form-control" id="currency"  onChange={this.handleCurrency} value={this.state.currency}>
                       <option value="ZAR">ZAR</option>
                       <option value="USD">USD</option>
-                      <option value="USD">EURO</option>
+                      <option value="EUR">EUR</option>
+                      <option value="GBP">GBP</option>
                     </select>
                   </FormGroup>
               </Row>

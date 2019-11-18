@@ -64,7 +64,7 @@ class HomePage extends Component {
             >
               Logout
             </button>
-            <ModalForm buttonLabel="Add Item" addItemToState={this.addItemToState}/>
+            <ModalForm buttonLabel="Add vehicle" addItemToState={this.addItemToState}/>
         </Row>
   
         <Row style={{margin: "20px 0"}}>

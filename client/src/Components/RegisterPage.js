@@ -32,7 +32,7 @@ class RegisterPage extends Component {
         e.preventDefault();
 
         this.setState({ submitted: true });
-        const { email, password, username, first_name, last_name, returnUrl } = this.state;
+        const { email, password, username, first_name, last_name } = this.state;
 
         // stop here if form is invalid
         if (!(email && password && username && first_name )) {

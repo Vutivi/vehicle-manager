@@ -8,11 +8,17 @@ router.get('/user/:userId', async (req, res) => {
   return res.send(vehicles);
 });
 
+router.get('/', async (req, res) => {
+  const vehicles = await req.context.models.Vehicle.findAll();
+  return res.send(vehicles);
+});
+
+
 router.get('/:vehicleId', async (req, res) => {
   const vehicle = await req.context.models.Vehicle.findByPk(
     req.params.vehicleId,
   )
-  .then(() => res.json(vehicle))
+  .then(vehicle => res.json(vehicle))
   .catch(err => res.status(404).json('Error: ' + err));
 });
 
@@ -25,7 +31,7 @@ router.post('/', async (req, res) => {
     mileage: req.body.mileage,
     userId: req.body.userId,
   })
-  .then(() => res.json("Wow"))
+  .then(vehicle => res.json(vehicle))
   .catch(err => res.status(400).json('Error: ' + err));
 });
 

@@ -30,4 +30,5 @@ const vehicle = (sequelize, DataTypes) => {
   };
   return Vehicle;
 };
+
 export default vehicle;

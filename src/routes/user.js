@@ -88,4 +88,10 @@ req.context.models.User.findOne({
   });
 });
 
+router.get('/', async (req, res) => {
+  const users = await req.context.models.User.findAll();
+  return res.send(users);
+});
+
+
 export default router;
