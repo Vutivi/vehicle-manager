@@ -11,7 +11,7 @@ Vehicle manager is a vehicle management app that helps you manage your vehicles 
 
 In the project directory, you can run:
 
-### `npm install`
+### `npm install && cd client && npm install && cd ..`
 ### `npm run dev`
 
 The browser will open a new tab on http://localhost:3000 where you can sign up and manage your vehicles
