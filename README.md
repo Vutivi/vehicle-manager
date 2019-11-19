@@ -1,4 +1,4 @@
-### Vehicle manager
+## Vehicle manager
 
 Vehicle manager is a vehicle management app that helps you manage your vehicles on the cloud
 
@@ -11,8 +11,8 @@ Vehicle manager is a vehicle management app that helps you manage your vehicles 
 
 In the project directory, you can run:
 
-### `npm install && cd client && npm install && cd ..`
-### `npm run dev`
+`npm install && cd client && npm install && cd ..`
+`npm run dev`
 
 The browser will open a new tab on http://localhost:3000 where you can sign up and manage your vehicles
 
@@ -21,11 +21,11 @@ The browser will open a new tab on http://localhost:3000 where you can sign up a
 
 In the project directory with the app running, run:
 
-### `npm test`
+ `npm test`
 
 The tests assumes that you have users and vehicles records in your database
 
-### To do
+## To do
 
 * Move secret keys and api links to .env on the client
 * Improve test coverage
