@@ -23,7 +23,12 @@ const vehicle = (sequelize, DataTypes) => {
           type: DataTypes.DECIMAL,
           unique: false,
           allowNull: false
-      },
+      }, 
+      imageUrl: {
+        type: DataTypes.STRING,
+        unique: false,
+        allowNull: true
+    },
   });
   Vehicle.associate = models => {
     Vehicle.belongsTo(models.User);

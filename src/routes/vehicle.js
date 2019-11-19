@@ -30,6 +30,7 @@ router.post('/', async (req, res) => {
     year: req.body.year,
     mileage: req.body.mileage,
     userId: req.body.userId,
+    imageUrl: req.body.imageUrl
   })
   .then(vehicle => res.json(vehicle))
   .catch(err => res.status(400).json('Error: ' + err));

@@ -1,7 +1,6 @@
 import { Router } from 'express';
 const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
-// const keys = require("../../config/keys");
 
 const router = Router();
 
